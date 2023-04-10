@@ -441,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let name = (new URLSearchParams(window.location.search)).get('to') ?? '';
 
   if (name.length == 0) {
-    document.getElementById('namatamu').remove();
+    // document.getElementById('namatamu').remove();
   } else {
     let div = document.createElement('div');
     name = name.replace(/</g, "&lt;").replace(/>/g, "&gt;");

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
+use App\Models\Guest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Ramsey\Uuid\Uuid;
@@ -30,7 +31,9 @@ class DefaultController extends Controller
 
     public function index(Request $request)
     {
-        return view('welcome');
+        $guest = Guest::find($request->query('tamu'));
+
+        return view('welcome', ['guest' => $guest]);
     }
 
     /**

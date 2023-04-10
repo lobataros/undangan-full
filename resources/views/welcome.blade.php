@@ -4,9 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Undangan Pernikahan Dimas & Ira</title>
+    <title>{{ $guest?->nama }} - Pernikahan Dimas & Ira</title>
     <meta name="title" content="Undangan Pernikahan Dimas & Ira">
     <meta name="description" content="Website Undangan Elektronik Pernikahan Dimas & Ira">
+    <meta property="og:title" content="{{ $guest?->nama }} - Undangan Spesial" />
+    <meta property="og:image" content="images/bg.png" />
+    <meta property="og:description" content="Undangan Pernikahan Dimas & Ira" />
     <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192x192.png">
     <meta name="theme-color" content="#212529">
     <meta name="color-scheme" content="dark">
@@ -164,7 +167,7 @@
                         acara :
                     </p>
 
-                    <div class="overflow-x-hidden">
+                    <div class="overflow-hidden">
                         <div class="py-2" data-aos="fade-left" data-aos-duration="1500">
                             <h1 class="font-estetik" style="font-size: 2rem;">Akad</h1>
                             <p>Pukul 08.00 WIB - 09.00</p>
@@ -337,15 +340,20 @@
             <div class="modal-content">
                 <div class="d-flex justify-content-center align-items-center" style="height: 100vh !important;">
                     <div class="text-center">
+                        @if($guest?->nama)
+                            <h2 class="my-4">Hi, you're invited!</h2>
+                        @endif
                         <h1 class="font-estetik mb-4">The Wedding Of</h1>
                         <div class="cropper border border-3 border-light shadow mb-4 mx-auto">
                             <img src="images/bg.png" alt="bg">
                         </div>
                         <h1 class="font-estetik my-4" style="font-size: 2.5rem;">Dimas & Ira</h1>
-                        <div id="namatamu"></div>
-                        <button type="button" class="btn btn-light shadow rounded-3 mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="buka()">
-                            <i class="fa-solid fa-envelope-open me-2"></i>Buka Undangan
-                        </button>
+                        <div id="namatamu">{{ $guest?->nama ?? 'Sorry, invitation is invalid' }}</div>
+                        @if ($guest?->nama)
+                            <button type="button" class="btn btn-light shadow rounded-3 mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="buka()">
+                                <i class="fa-solid fa-envelope-open me-2"></i>Buka Undangan
+                            </button>
+                        @endif
                     </div>
                 </div>
             </div>
