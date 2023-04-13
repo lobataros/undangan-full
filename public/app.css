@@ -70,3 +70,10 @@ body {
 .card-body {
   overflow-wrap: break-word !important;
 }
+
+#home {
+  background-image: url('images/cover.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

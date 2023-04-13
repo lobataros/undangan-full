@@ -27,7 +27,8 @@ const formatDate = (date) => {
 }
 
 const salin = (btn) => {
-  navigator.clipboard.writeText(btn.getAttribute('data-nomer'));
+  const rekening = document.getElementById('rekening').innerHTML;
+  navigator.clipboard.writeText(rekening);
   let tmp = btn.innerHTML;
   btn.innerHTML = 'Tersalin';
   btn.disabled = true;
