@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $guest?->nama ?? 'Undangan' }} - Pernikahan Dimas & Ira</title>
-    <meta name="title" content="Undangan Pernikahan Dimas & Ira">
-    <meta name="description" content="Website Undangan Elektronik Pernikahan Dimas & Ira">
+    <title>{{ $guest?->nama ?? 'Undangan' }} - Pernikahan Ira & Dimas</title>
+    <meta name="title" content="Undangan Pernikahan Ira & Dimas">
+    <meta name="description" content="Website Undangan Elektronik Pernikahan Ira & Dimas">
     <meta property="og:title" content="{{ $guest?->nama }} - Undangan Spesial" />
     <meta property="og:image" content="images/bg.png" />
-    <meta property="og:description" content="Undangan Pernikahan Dimas & Ira" />
+    <meta property="og:description" content="Undangan Pernikahan Ira & Dimas" />
     <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192x192.png">
     <meta name="theme-color" content="#212529">
     <meta name="color-scheme" content="dark">
@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="app.css">
 </head>
 
-<body data-email="user@example.com" data-password="12345678" data-url="http://localhost:8000">
+<body data-email="user@example.com" data-password="12345678" data-url="https://undangan.herokuapp.com">
     <nav class="navbar navbar-light bg-light navbar-expand fixed-bottom rounded-top-4 p-0" id="navbar-example2">
         <ul class="navbar-nav nav-justified w-100 align-items-center">
             <li class="nav-item">
@@ -66,7 +66,7 @@
                         <img src="images/bg.png" alt="bg">
                     </div>
                 </div>
-                <h1 class="font-estetik my-4" style="font-size: 3rem;">Dimas & Ira</h1>
+                <h1 class="font-estetik my-4" style="font-size: 3rem;">Ira & Dimas</h1>
                 <h4>Kamis, 18 Mei 2023</h4>
                 <a class="btn btn-outline-dark btn-sm shadow rounded-pill px-3 my-1 mb-5" target="_blank"
                     href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The%20Wedding%20of%20Dimas%20and%20Ira&details=The%20Wedding%20of%20Dimas%20and%20Ira%20%7C%2015%20Maret%202023%20%7C%20RT%2010%20RW%2002,%20Desa%20Pajerukan,%20Kec.%20Kalibagor,%20Kab.%20Banyumas,%20Jawa%20Tengah%2053191%20%7C%2010.00%20-%2011.00%20WIB&dates=20230315T100000/20230315T110000&location=https://goo.gl/maps/ALZR6FJZU3kxVwN86">
@@ -74,7 +74,7 @@
             </div>
         </section>
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="margin-top: -75px">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path fill="#feefcb" fill-opacity="1"
                 d="M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,165.3C672,160,768,96,864,96C960,96,1056,160,1152,154.7C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
             </path>
@@ -348,7 +348,7 @@
                         <div class="cropper border border-3 border-light shadow mb-4 mx-auto">
                             <img src="images/bg.png" alt="bg">
                         </div>
-                        <h1 class="font-estetik my-4" style="font-size: 2.5rem;">Dimas & Ira</h1>
+                        <h1 class="font-estetik my-4" style="font-size: 2.5rem;">Ira & Dimas</h1>
                         <div id="namatamu">{{ $guest?->nama ?? 'Sorry, invitation is invalid' }}</div>
                         @if ($guest?->nama)
                             <button type="button" class="btn btn-light shadow rounded-3 mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="buka()">
