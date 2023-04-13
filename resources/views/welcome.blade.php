@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=1024">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $guest?->nama ?? 'Undangan' }} - Pernikahan Dimas & Ira</title>
     <meta name="title" content="Undangan Pernikahan Dimas & Ira">
     <meta name="description" content="Website Undangan Elektronik Pernikahan Dimas & Ira">
