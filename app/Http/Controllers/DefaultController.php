@@ -14,7 +14,7 @@ class DefaultController extends Controller
     private function getInnerComment(string $id)
     {
         $data = Comment::select(['uuid', 'nama', 'hadir', 'komentar', 'created_at'])
-            ->where('user_id', 1)
+            // ->where('user_id', 1)
             ->where('parent_id', $id)
             ->orderBy('id', 'DESC')
             ->get();
@@ -58,7 +58,7 @@ class DefaultController extends Controller
         // $valid->per = intval($valid->per);
 
         $data = Comment::select(['uuid', 'nama', 'hadir', 'komentar', 'created_at'])
-            ->where('user_id', 1)
+            // ->where('user_id', 1)
             ->whereNull('parent_id')
             ->orderBy('id', 'DESC')
             ->get();
@@ -127,7 +127,7 @@ class DefaultController extends Controller
         }
 
         $data = Comment::where('uuid', $id)
-            ->where('user_id', 1)
+            // ->where('user_id', 1)
             ->limit(1)
             ->select(['nama', 'komentar', 'created_at'])
             ->first();
@@ -162,7 +162,7 @@ class DefaultController extends Controller
         }
 
         $data = Comment::where('uuid', $id)
-            ->where('user_id', context()->user->id)
+            // ->where('user_id', context()->user->id)
             ->limit(1)
             ->first()
             ->fail();
@@ -217,7 +217,7 @@ class DefaultController extends Controller
         $data = $form;
         $data['parent_id'] = empty($form['id']) ? null : $form['id'];
         $data['uuid'] = Uuid::uuid4()->toString();
-        $data['user_id'] = 1;
+        // $data['user_id'] = 1;
 
         $data = Comment::create($data);
         $data->created_at = $data->created_at->diffForHumans();
