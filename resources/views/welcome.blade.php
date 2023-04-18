@@ -69,7 +69,7 @@
                 <h1 class="font-estetik my-4" style="font-size: 3rem;">Ira & Dimas</h1>
                 <h4>Kamis, 18 Mei 2023</h4>
                 <a class="btn btn-outline-dark btn-sm shadow rounded-pill px-3 my-1 mb-5" target="_blank"
-                    href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=💍%20The%20Wedding%20of%20Ira%20and%20Dimas&details=💍%20The%20Wedding%20of%20Ira%20and%20Dimas%0A🗓️%2018%20Mei%202023%0A🗺️%20Masjid%20At-Taqwa%20KPAD,%20Gegerkalong,%20Kec.%20Sukasari,%20Kota%20Bandung,%20Jawa%20Barat%2040153%0A🕑%2008.00%20-%2010.00%20WIB&dates=20230518T0800000/20230518T100000&location=Masjid%20At-Taqwa%20KPAD,%20Jl.%20Pak%20Gatot%20Raya%20H%20No.27,%20Gegerkalong,%20Kec.%20Sukasari,%20Kota%20Bandung,%20Jawa%20Barat%2040153">
+                    href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20230518T010000Z%2F20230518T030000Z&text=%F0%9F%92%8D%20The%20Wedding%20of%20Ira%20and%20Dimas&location=Masjid%20At-Taqwa%20KPAD%2C%20Jl.%20Pak%20Gatot%20Raya%20H%20No.27%2C%20Gegerkalong%2C%20Kec.%20Sukasari%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040153%2C%20Indonesia&details=%F0%9F%92%8D%20The%20Wedding%20of%20Ira%20and%20Dimas%0A%F0%9F%97%93%EF%B8%8F%2018%20Mei%202023%0A%F0%9F%97%BA%EF%B8%8F%20Masjid%20At-Taqwa%20KPAD%2C%20Gegerkalong%2C%20Kec.%20Sukasari%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040153%0A%F0%9F%95%91%2008.00%20-%2010.00%20WIB">
                     <i class="fa-solid fa-calendar-check me-2"></i>Save The Date</a>
             </div>
         </section>
