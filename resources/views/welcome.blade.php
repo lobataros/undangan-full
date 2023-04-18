@@ -69,7 +69,7 @@
                 <h1 class="font-estetik my-4" style="font-size: 3rem;">Ira & Dimas</h1>
                 <h4>Kamis, 18 Mei 2023</h4>
                 <a class="btn btn-outline-dark btn-sm shadow rounded-pill px-3 my-1 mb-5" target="_blank"
-                    href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The%20Wedding%20of%20Dimas%20and%20Ira&details=The%20Wedding%20of%20Dimas%20and%20Ira%20%7C%2015%20Maret%202023%20%7C%20RT%2010%20RW%2002,%20Desa%20Pajerukan,%20Kec.%20Kalibagor,%20Kab.%20Banyumas,%20Jawa%20Tengah%2053191%20%7C%2010.00%20-%2011.00%20WIB&dates=20230315T100000/20230315T110000&location=https://goo.gl/maps/ALZR6FJZU3kxVwN86">
+                    href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=💍%20The%20Wedding%20of%20Ira%20and%20Dimas&details=💍%20The%20Wedding%20of%20Ira%20and%20Dimas%0A🗓️%2018%20Mei%202023%0A🗺️%20Masjid%20At-Taqwa%20KPAD,%20Gegerkalong,%20Kec.%20Sukasari,%20Kota%20Bandung,%20Jawa%20Barat%2040153%0A🕑%2008.00%20-%2010.00%20WIB&dates=20230518T0800000/20230518T100000&location=Masjid%20At-Taqwa%20KPAD,%20Jl.%20Pak%20Gatot%20Raya%20H%20No.27,%20Gegerkalong,%20Kec.%20Sukasari,%20Kota%20Bandung,%20Jawa%20Barat%2040153">
                     <i class="fa-solid fa-calendar-check me-2"></i>Save The Date</a>
             </div>
         </section>
