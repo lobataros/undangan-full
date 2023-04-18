@@ -259,7 +259,8 @@
                     <div class="mb-1" id="balasan"></div>
                     <div class="mb-3">
                         <label for="formnama" class="form-label">Nama</label>
-                        <input disabled type="text" class="form-control shadow-sm" id="formnama" placeholder="Isikan Nama Anda" value="{{ $guest?->nama }}">
+                        <input type="text" class="form-control shadow-sm" id="formnama" placeholder="Isikan Nama Anda" value="{{ $guest?->nama }}">
+                        <input disabled type="hidden" class="form-control shadow-sm" value="{{ $guest?->id }}">
                     </div>
                     <div class="mb-3">
                         <label for="hadiran" class="form-label" id="labelhadir">Kehadiran</label>
@@ -368,11 +369,10 @@
             <div class="modal-content">
                 <div class="d-flex justify-content-center align-items-center" style="height: 100vh !important;">
                     <div class="text-left">
-                        {{-- <h2 class="my-4">Informasi</h2> --}}
                         <h1 class="font-estetik mb-4 text-center">💐 Informasi 💐</h1>
                         <div class="px-5">
                             Dear, {{ $guest?->nama }} <br>
-                            Mohon maaf jika dalam acara pernikahan kami, tidak mengadakan makanan yang mewah, panggung megah, serta pesta yang meriah. <br><br>
+                            Mohon maaf jika dalam acara pernikahan ini, kami tidak mengadakan makanan mewah, panggung megah, ataupun pesta yang meriah. <br><br>
                             Tanpa mengurangi rasa hormat, jika berkenan, hadirilah walimah kecil kami. Semoga hubungan kita tetap hangat, serta berkah bagi kami dan para tamu undangan.<br><br>
                             <div class="text-end">
                                 With love,<br>

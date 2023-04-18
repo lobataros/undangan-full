@@ -445,14 +445,6 @@ const kirim = async () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   let modal = new bootstrap.Modal('#exampleModal');
-  let name = (new URLSearchParams(window.location.search)).get('to') ?? '';
-
-  let div = document.createElement('div');
-  name = name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  div.classList.add('m-2');
-
-  document.getElementById('formnama').value = name;
-  document.getElementById('namatamu').appendChild(div);
 
   modal.show();
 });
