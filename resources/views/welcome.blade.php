@@ -222,7 +222,7 @@
                         <div class="row justify-content-center">
                             <div class="col-12 card-body border rounded-3 shadow p-3 m-3" style="max-width: 25rem;"
                                 data-aos="fade-down" data-aos-duration="1500">
-                                <img src="images/qris.jpg"
+                                <img src="images/qris.jpeg"
                                     class="img-fluid rounded rounded-3" width="150" alt="bni">
                                 <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">
                                     QRIS
@@ -349,12 +349,43 @@
                             <img src="images/bg.png" alt="bg">
                         </div>
                         <h1 class="font-estetik my-4" style="font-size: 2.5rem;">Ira & Dimas</h1>
-                        <div id="namatamu">{{ $guest?->nama ?? 'Sorry, invitation is invalid' }}</div>
                         @if ($guest?->nama)
-                            <button type="button" class="btn btn-light shadow rounded-3 mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="buka()">
-                                <i class="fa-solid fa-envelope-open me-2"></i>Buka Undangan
+                            <p class="mt-0 mb-1 mx-0 p-0 text-dark">Kepada Yth Bapak/Ibu/Saudara/i</p>
+                            <div id="namatamu">{{ $guest?->nama }}</div>
+                            <button type="button" class="btn btn-dark shadow rounded-3 mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="bukaInfo()">
+                                <i class="fa-solid fa-eye me-2"></i>Lihat Informasi
                             </button>
+                        @else
+                            <div id="namatamu">Sorry, invitation is invalid</div>
                         @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen m-0">
+            <div class="modal-content">
+                <div class="d-flex justify-content-center align-items-center" style="height: 100vh !important;">
+                    <div class="text-left">
+                        {{-- <h2 class="my-4">Informasi</h2> --}}
+                        <h1 class="font-estetik mb-4 text-center">💐 Informasi 💐</h1>
+                        <div class="px-5">
+                            Dear, {{ $guest?->nama }} <br>
+                            Mohon maaf jika dalam acara pernikahan kami, tidak mengadakan makanan yang mewah, panggung megah, serta pesta yang meriah. <br><br>
+                            Tanpa mengurangi rasa hormat, jika berkenan, hadirilah walimah kecil kami. Semoga hubungan kita tetap hangat, serta berkah bagi kami dan para tamu undangan.<br><br>
+                            <div class="text-end">
+                                With love,<br>
+                                <h1 class="font-estetik mt-2">ID</h1>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            @if ($guest?->nama)
+                                <button type="button" class="btn btn-dark shadow rounded-3 mt-4" data-bs-toggle="modal" data-bs-target="#infoModal" onclick="buka()">
+                                    <i class="fa-solid fa-envelope-open me-2"></i>Buka Undangan
+                                </button>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>

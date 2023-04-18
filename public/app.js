@@ -12,10 +12,14 @@ const audio = (() => {
   return {
     play: function () {
       getInstance().play();
+      getInstance().volume = 0.2;
     },
     pause: function () {
       getInstance().pause();
-    }
+    },
+    increaseVolume: function () {
+      getInstance().volume = 0.6;
+    },
   };
 })();
 
@@ -58,14 +62,22 @@ const timer = () => {
   }, 1000);
 };
 
+const bukaInfo = () => {
+  let infoModal = new bootstrap.Modal('#infoModal');
+
+  ucapan();
+  timer();
+  audio.play();
+  infoModal.show();
+};
+
 const buka = async () => {
+  let infoModal = new bootstrap.Modal('#infoModal');
   document.getElementById('loading').style.display = 'none';
   document.getElementById('tombol-musik').style.display = 'block';
   AOS.init();
-  // await login();
-  await ucapan();
-  timer();
-  audio.play();
+
+  audio.increaseVolume();
 };
 
 const play = (btn) => {
@@ -280,16 +292,10 @@ const renderCard = (data) => {
   return DIV;
 };
 
-const ucapan = async () => {
+const ucapan = () => {
   const UCAPAN = document.getElementById('daftarucapan');
   UCAPAN.innerHTML = `<div class="text-center"><span class="spinner-border spinner-border-sm me-1"></span>Loading...</div>`;
   let token = localStorage.getItem('token') ?? '';
-
-  // if (token.length == 0) {
-  //   alert('Terdapat kesalahan, token kosong !');
-  //   window.location.reload();
-  //   return;
-  // }
 
   const REQ = {
     method: 'GET',
@@ -300,7 +306,7 @@ const ucapan = async () => {
     }
   };
 
-  await fetch(document.querySelector('body').getAttribute('data-url') + '/api/comment', REQ)
+  fetch(document.querySelector('body').getAttribute('data-url') + '/api/comment', REQ)
     .then((res) => res.json())
     .then((res) => {
       if (res.code == 200) {
@@ -441,20 +447,12 @@ document.addEventListener('DOMContentLoaded', () => {
   let modal = new bootstrap.Modal('#exampleModal');
   let name = (new URLSearchParams(window.location.search)).get('to') ?? '';
 
-  if (name.length == 0) {
-    // document.getElementById('namatamu').remove();
-  } else {
-    let div = document.createElement('div');
-    name = name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    div.classList.add('m-2');
-    div.innerHTML = `
-      <p class="mt-0 mb-1 mx-0 p-0 text-light">Kepada Yth Bapak/Ibu/Saudara/i</p>
-      <h2 class="text-light">${name}</h2>
-      `;
+  let div = document.createElement('div');
+  name = name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  div.classList.add('m-2');
 
-    document.getElementById('formnama').value = name;
-    document.getElementById('namatamu').appendChild(div);
-  }
+  document.getElementById('formnama').value = name;
+  document.getElementById('namatamu').appendChild(div);
 
   modal.show();
 });
