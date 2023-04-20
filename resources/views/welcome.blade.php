@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="app.css">
 </head>
 
-<body data-email="user@example.com" data-password="12345678" data-url="https://undangan.herokuapp.com">
+<body data-email="user@example.com" data-password="12345678" data-url="https://iradimas.herokuapp.com">
     <nav class="navbar navbar-light bg-light navbar-expand fixed-bottom rounded-top-4 p-0" id="navbar-example2">
         <ul class="navbar-nav nav-justified w-100 align-items-center">
             <li class="nav-item">
