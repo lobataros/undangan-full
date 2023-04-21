@@ -77,3 +77,10 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+#whatsappShare {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+};

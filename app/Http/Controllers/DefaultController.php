@@ -37,9 +37,14 @@ class DefaultController extends Controller
         try {
             $guests = file_get_contents("https://script.google.com/macros/s/$deployId/dev?guest=$guest");
             $result = json_decode($guests, true);
+            $name = $result['guest']['name'];
+            $id = $result['guest']['id'];
 
             if (!empty($result['guest'])) {
-                return view('welcome', ['guest' => $result['guest']]);
+                return view('welcome', [
+                    'guest' => $result['guest'],
+                    'message' => "%F0%9F%A4%B5%E2%80%8D%E2%99%82%EF%B8%8F%F0%9F%91%B0%E2%80%8D%E2%99%80%EF%B8%8F%F0%9F%92%8C%0ABismillahirahmanirrahim+++.%0ADear%2C%20%2A$name%2A%0A%0ASalam%20hangat%20dari%20kami%2C%20Ira%20dan%20Dimas%21%20Kami%20sangat%20senang%20untuk%20membagikan%20kabar%20bahagia%20bahwa%20kami%20akan%20menikah%21%0A%0ASebagai%20teman%2C%20kami%20ingin%20mengajakmu%20untuk%20turut%20merayakan%20momen%20penting%20dalam%20hidup%20kami.%20Jadi%2C%20izinkan%20kami%20untuk%20mengirimkan%20undangan%20resmi%20kami%20melalui%20tautan%20ini%3A%0A%0A%F0%9F%94%97%20https%3A%2F%2Firadimas.herokuapp.com%2F%3Ftamu%3D$id%0A%0A_%2AAcara%20pernikahan%20kami%20akan%20diselenggarakan%20dengan%20sangat%20sederhana%2A_%2C%20tanpa%20pesta%20yang%20meriah%2C%20karena%20yang%20terpenting%20bagi%20kami%20adalah%20kehadiran%2C%20dan%20doa%20restu%20kalian%20semua.%20Meskipun%20begitu%2C%20kami%20ingin%20menjadikan%20momen%20ini%20spesial%20dengan%20_%2Amengadakan%20walimah%20kecil%20di%20kediaman%20kami%2A_.%20Kami%20akan%20sangat%20bahagia%20jika%20kamu%20bisa%20hadir%20dan%20berbagi%20kebahagiaan%20bersama.%0A%0ATerima%20kasih.%20Kami%20tunggu%20di%20hari%20spesial%20nanti%21%0A%0AWith%20love%2C%0A%2A~ID%2A"
+                ]);
             }
         } catch (\Throwable $th) {
             //throw $th;

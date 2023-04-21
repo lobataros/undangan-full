@@ -365,6 +365,7 @@
                             <button type="button" class="btn btn-dark shadow rounded-3 mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="bukaInfo()">
                                 <i class="fa-solid fa-eye me-2"></i>Lihat Informasi
                             </button>
+                            <a id="whatsappShare" href="whatsapp://send?text={{ $message }}">WHATSAPP</a>
                         @else
                             <div id="namatamu">Sorry, invitation is invalid</div>
                         @endif
