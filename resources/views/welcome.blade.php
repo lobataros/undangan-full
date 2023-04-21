@@ -8,12 +8,17 @@
     <meta name="title" content="Undangan Pernikahan Ira & Dimas">
     <meta name="description" content="Website Undangan Elektronik Pernikahan Ira & Dimas">
     <meta property="og:title" content="{{ $guest['name'] }} - Undangan Spesial" />
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
     <meta property="og:image" content="images/link-preview.jpg" />
     <meta property="og:image:width" content="600">
     <meta property="og:image:height" content="600">
     <meta property="og:image:alt" content="Ira & Dimas">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:description" content="Undangan Pernikahan Ira & Dimas" />
+    <meta property="article:published_time" content="2023-05-18T00:16:14+07:00">
+    <meta property="article:modified_time" content="2023-05-18T15:32:38+07:00">
+    <meta property="article:section" content="Undangan Digital">
     <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192x192.png">
     <meta name="theme-color" content="#212529">
     <meta name="color-scheme" content="dark">
