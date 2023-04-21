@@ -36,7 +36,7 @@ class DefaultController extends Controller
         $guests = file_get_contents("https://script.google.com/macros/s/$deployId/dev?guest=$guest");
         $result = json_decode($guests, true);
         
-        if ($result) {
+        if (!empty($result['guest'])) {
             return view('welcome', ['guest' => $result['guest']]);
         }
         
