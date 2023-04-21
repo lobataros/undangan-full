@@ -33,13 +33,18 @@ class DefaultController extends Controller
     {
         $deployId = env('DEPLOYMENT_ID');
         $guest = $request->query('tamu');
-        $guests = file_get_contents("https://script.google.com/macros/s/$deployId/dev?guest=$guest");
-        $result = json_decode($guests, true);
-        
-        if (!empty($result['guest'])) {
-            return view('welcome', ['guest' => $result['guest']]);
+
+        try {
+            $guests = file_get_contents("https://script.google.com/macros/s/$deployId/dev?guest=$guest");
+            $result = json_decode($guests, true);
+
+            if (!empty($result['guest'])) {
+                return view('welcome', ['guest' => $result['guest']]);
+            }
+        } catch (\Throwable $th) {
+            //throw $th;
         }
-        
+
         return view('welcome', ['guest' => [
             'id' => null,
             'name' => null,
