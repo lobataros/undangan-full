@@ -8,7 +8,7 @@
     <meta name="title" content="Undangan Pernikahan Ira & Dimas">
     <meta name="description" content="Website Undangan Elektronik Pernikahan Ira & Dimas">
     <meta property="og:title" content="{{ $guest['name'] }} - Undangan Spesial" />
-    <meta property="og:image" content="images/bg.png" />
+    <meta property="og:image" content="images/link-preview.png" />
     <meta property="og:description" content="Undangan Pernikahan Ira & Dimas" />
     <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192x192.png">
     <meta name="theme-color" content="#212529">
