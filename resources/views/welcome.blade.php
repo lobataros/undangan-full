@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $guest?->nama ?? 'Undangan' }} - Pernikahan Ira & Dimas</title>
+    <title>{{ $guest['name'] ?? 'Undangan' }} - Pernikahan Ira & Dimas</title>
     <meta name="title" content="Undangan Pernikahan Ira & Dimas">
     <meta name="description" content="Website Undangan Elektronik Pernikahan Ira & Dimas">
-    <meta property="og:title" content="{{ $guest?->nama }} - Undangan Spesial" />
+    <meta property="og:title" content="{{ $guest['name'] }} - Undangan Spesial" />
     <meta property="og:image" content="images/bg.png" />
     <meta property="og:description" content="Undangan Pernikahan Ira & Dimas" />
     <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192x192.png">
@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="app.css">
 </head>
 
-<body data-email="user@example.com" data-password="12345678" data-url="https://iradimas.herokuapp.com">
+<body data-email="user@example.com" data-password="12345678" data-url="{{ url('/') }}">
     <nav class="navbar navbar-light bg-light navbar-expand fixed-bottom rounded-top-4 p-0" id="navbar-example2">
         <ul class="navbar-nav nav-justified w-100 align-items-center">
             <li class="nav-item">
@@ -259,8 +259,8 @@
                     <div class="mb-1" id="balasan"></div>
                     <div class="mb-3">
                         <label for="formnama" class="form-label">Nama</label>
-                        <input type="text" class="form-control shadow-sm" id="formnama" placeholder="Isikan Nama Anda" value="{{ $guest?->nama }}">
-                        <input disabled type="hidden" class="form-control shadow-sm" value="{{ $guest?->id }}">
+                        <input type="text" class="form-control shadow-sm" id="formnama" placeholder="Isikan Nama Anda" value="{{ $guest['name'] }}">
+                        <input disabled type="hidden" class="form-control shadow-sm" id="guestId" value="{{ $guest['id'] }}">
                     </div>
                     <div class="mb-3">
                         <label for="hadiran" class="form-label" id="labelhadir">Kehadiran</label>
@@ -342,7 +342,7 @@
             <div class="modal-content">
                 <div class="d-flex justify-content-center align-items-center" style="height: 100vh !important;">
                     <div class="text-center">
-                        @if($guest?->nama)
+                        @if($guest['name'])
                             <h2 class="my-4">Hi, you're invited!</h2>
                         @endif
                         <h1 class="font-estetik mb-4">The Wedding Of</h1>
@@ -350,9 +350,9 @@
                             <img src="images/bg.png" alt="bg">
                         </div>
                         <h1 class="font-estetik my-4" style="font-size: 2.5rem;">Ira & Dimas</h1>
-                        @if ($guest?->nama)
+                        @if ($guest['name'])
                             <p class="mt-0 mb-1 mx-0 p-0 text-dark">Kepada Yth Bapak/Ibu/Saudara/i</p>
-                            <div id="namatamu">{{ $guest?->nama }}</div>
+                            <div id="namatamu">{{ $guest['name'] }}</div>
                             <button type="button" class="btn btn-dark shadow rounded-3 mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="bukaInfo()">
                                 <i class="fa-solid fa-eye me-2"></i>Lihat Informasi
                             </button>
@@ -371,7 +371,7 @@
                     <div class="text-left">
                         <h1 class="font-estetik mb-4 text-center">💐 Informasi 💐</h1>
                         <div class="px-5">
-                            Dear, {{ $guest?->nama }} <br>
+                            Dear, {{ $guest['name'] }} <br>
                             Mohon maaf jika dalam acara pernikahan ini, kami tidak mengadakan makanan mewah, panggung megah, ataupun pesta yang meriah. <br><br>
                             Tanpa mengurangi rasa hormat, jika berkenan, hadirilah walimah kecil kami. Semoga hubungan kita tetap hangat, serta berkah bagi kami dan para tamu undangan.<br><br>
                             <div class="text-end">
@@ -380,7 +380,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            @if ($guest?->nama)
+                            @if ($guest['name'])
                                 <button type="button" class="btn btn-dark shadow rounded-3 mt-4" data-bs-toggle="modal" data-bs-target="#infoModal" onclick="buka()">
                                     <i class="fa-solid fa-envelope-open me-2"></i>Buka Undangan
                                 </button>

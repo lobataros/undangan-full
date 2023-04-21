@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('guests', function (Blueprint $table) {
-            $table->id();
+            $table->string('id')->primary();
             $table->string('nama');
-            $table->boolean('hadir')->default(false);
-            $table->enum('tamu', ['pria', 'wanita']);
-            $table->enum('hubungan', ['kerabat', 'keluarga']);
+            $table->boolean('hadir')->default(false)->nullable();
+            $table->enum('tamu', ['pria', 'wanita'])->nullable();
+            $table->enum('hubungan', ['kerabat', 'keluarga', 'pengantin'])->nullable();
             $table->timestamps();
         });
     }

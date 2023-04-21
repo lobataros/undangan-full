@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('ip')->nullable();
             $table->text('user_agent')->nullable();
             $table->string('parent_id')->nullable();
-            $table->unsignedBigInteger('guest_id')->nullable();
+            $table->string('guest_id')->nullable();
             $table->foreign('guest_id')->references('id')->on('guests');
 
             $table->timeStamps();

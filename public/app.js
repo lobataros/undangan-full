@@ -100,7 +100,6 @@ const resetForm = () => {
   document.getElementById('kirimbalasan').style.display = 'none';
   document.getElementById('idbalasan').value = null;
   document.getElementById('balasan').innerHTML = null;
-  document.getElementById('formnama').value = null;
   document.getElementById('hadiran').value = 0;
   document.getElementById('formpesan').value = null;
 };
@@ -148,7 +147,7 @@ const balasan = async (button) => {
                       <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
                           <strong>${res.data.nama}</strong>
                       </p>
-                      <small class="text-dark m-0 p-0" style="font-size: 0.75rem;">${res.data.created_at}</small>
+                      <small class="text-dark m-0 p-0" style="font-size: 0.75rem;">${formatDate(res.data.created_at)}</small>
                   </div>
                   <hr class="text-dark my-1">
                   <p class="text-dark m-0 p-0" style="white-space: pre-line">${res.data.komentar}</p>
@@ -177,6 +176,7 @@ const kirimBalasan = async () => {
   let komentar = document.getElementById('formpesan').value;
   let token = localStorage.getItem('token') ?? '';
   let id = document.getElementById('idbalasan').value;
+  let guestId = document.getElementById('guestId').value;
 
   // if (token.length == 0) {
   //   alert('Terdapat kesalahan, token kosong !');
@@ -211,11 +211,7 @@ const kirimBalasan = async () => {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
     },
-    body: JSON.stringify({
-      nama: nama,
-      id: id,
-      komentar: komentar
-    })
+    body: JSON.stringify({ nama, id, komentar, guestId })
   };
 
   let isSuccess = false;
@@ -240,9 +236,9 @@ const kirimBalasan = async () => {
     .catch((err) => alert(err));
 
   if (isSuccess) {
-    await ucapan();
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     resetForm();
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    ucapan();
   }
 
   document.getElementById('batal').disabled = false;
@@ -374,6 +370,7 @@ const kirim = async () => {
   let hadir = document.getElementById('hadiran').value;
   let komentar = document.getElementById('formpesan').value;
   let token = localStorage.getItem('token') ?? '';
+  let guestId = document.getElementById('guestId').value;
 
   // if (token.length == 0) {
   //   alert('Terdapat kesalahan, token kosong !');
@@ -413,9 +410,10 @@ const kirim = async () => {
       'Authorization': 'Bearer ' + token
     },
     body: JSON.stringify({
-      nama: nama,
+      nama,
       hadir: hadir == 1,
-      komentar: komentar
+      komentar,
+      guestId
     })
   };
 

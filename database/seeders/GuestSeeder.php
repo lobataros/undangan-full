@@ -15,10 +15,18 @@ class GuestSeeder extends Seeder
     public function run(): void
     {
         DB::table('guests')->insert([
-            'nama' => 'Test',
-            'hadir' => false,
+            'id' => 'pw',
+            'nama' => 'Ira',
+            'hadir' => true,
+            'tamu' => 'wanita',
+            'hubungan' => 'pengantin',
+        ]);
+        DB::table('guests')->insert([
+            'id' => 'pp',
+            'nama' => 'Dimas',
+            'hadir' => true,
             'tamu' => 'pria',
-            'hubungan' => 'kerabat',
+            'hubungan' => 'pengantin',
         ]);
     }
 }

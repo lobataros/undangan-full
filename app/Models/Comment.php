@@ -18,5 +18,6 @@ class Comment extends Model
         'komentar',
         'created_at',
         'updated_at',
+        'guest_id'
     ];
 }

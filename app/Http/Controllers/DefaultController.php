@@ -31,9 +31,19 @@ class DefaultController extends Controller
 
     public function index(Request $request)
     {
-        $guest = Guest::find($request->query('tamu'));
-
-        return view('welcome', ['guest' => $guest]);
+        $deployId = env('DEPLOYMENT_ID');
+        $guest = $request->query('tamu');
+        $guests = file_get_contents("https://script.google.com/macros/s/$deployId/dev?guest=$guest");
+        $result = json_decode($guests, true);
+        
+        if ($result) {
+            return view('welcome', ['guest' => $result['guest']]);
+        }
+        
+        return view('welcome', ['guest' => [
+            'id' => null,
+            'name' => null,
+        ]]);
     }
 
     /**
@@ -217,9 +227,17 @@ class DefaultController extends Controller
         $data = $form;
         $data['parent_id'] = empty($form['id']) ? null : $form['id'];
         $data['uuid'] = Uuid::uuid4()->toString();
-        // $data['user_id'] = 1;
 
-        $data = Comment::create($data);
+        $guest = Guest::firstOrCreate([
+            'id' => $form['guestId'],
+            'nama' => $form['nama'],
+            ...(!empty($form['hadir']) ? ['hadir' => $form['hadir']] : [])
+        ]);
+
+        $data = Comment::create([
+            ...$data,
+            'guest_id' => $guest->id
+        ]);
         $data->created_at = $data->created_at->diffForHumans();
         $data->nama = e($data->nama);
         $data->komentar = e($data->komentar);
