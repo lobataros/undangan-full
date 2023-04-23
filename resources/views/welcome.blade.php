@@ -116,7 +116,7 @@
                         </div>
                         <h1 class="font-estetik" style="font-size: 3rem;">Ira Triyana</h1>
                         <h5 class="mt-3 mb-0">Putri dari pasangan</h5>
-                        <p class="mb-0">Bapak Oyon (alm.) & Ibu Dede (alm.)</p>
+                        <p class="mb-0">Bapak Oyon (alm.) & Ibu Dede (almh.)</p>
                     </div>
                 </div>
             </div>
@@ -204,7 +204,8 @@
                                 <i class="fa-solid fa-map-location-dot me-2"></i>Lihat Google Maps
                             </a>
                             <p class="mb-0 mt-1 mx-1" style="font-size: 0.9rem;">
-                                Jl. Gegerkalong Girang No.2, RT.04/RW.01, Gegerkalong, Kec. Sukasari, Kota Bandung, Jawa Barat 40153
+                                Jl. Gegerkalong Girang No.2, RT.04/RW.01, Gegerkalong, Kec. Sukasari, Kota Bandung, Jawa Barat 40153<br>
+                                (Patokan Depot Akita)
                             </p>
                         </div>
                     </div>
@@ -360,7 +361,7 @@
                         </div>
                         <h1 class="font-estetik my-4" style="font-size: 2.5rem;">Ira & Dimas</h1>
                         @if ($guest['name'])
-                            <p class="mt-0 mb-1 mx-0 p-0 text-dark">Kepada Yth Bapak/Ibu/Saudara/i</p>
+                            <p class="mt-0 mb-1 mx-0 p-0 text-dark">Kepada Yth. Kerabatku,</p>
                             <div id="namatamu">{{ $guest['name'] }}</div>
                             <button type="button" class="btn btn-dark shadow rounded-3 mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="bukaInfo()">
                                 <i class="fa-solid fa-eye me-2"></i>Lihat Informasi
@@ -381,7 +382,7 @@
                     <div class="text-left">
                         <h1 class="font-estetik mb-4 text-center">💐 Informasi 💐</h1>
                         <div class="px-5">
-                            Dear, {{ $guest['name'] }} <br>
+                            Dear, {{ $guest['name'] }} <br><br>
                             Mohon maaf jika dalam acara pernikahan ini, kami tidak mengadakan makanan mewah, panggung megah, ataupun pesta yang meriah. <br><br>
                             Tanpa mengurangi rasa hormat, jika berkenan, hadirilah walimah kecil kami. Semoga hubungan kita tetap hangat, serta berkah bagi kami dan para tamu undangan.<br><br>
                             <div class="text-end">
