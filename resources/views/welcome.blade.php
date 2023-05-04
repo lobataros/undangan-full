@@ -196,7 +196,7 @@
 
                         <div class="py-2" data-aos="fade-right" data-aos-duration="1500">
                             <h1 class="font-estetik" style="font-size: 2rem;">Syukuran</h1>
-                            <p>Pukul 10.00 WIB - Selesai</p>
+                            <p>Pukul 10.00 WIB - 12.30</p>
                         </div>
                         <div class="py-2" data-aos="fade-up" data-aos-duration="1500">
                             <a href="https://goo.gl/maps/gVwMDMySzLpHU48q6" target="_blank"
