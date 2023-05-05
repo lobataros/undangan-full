@@ -115,12 +115,6 @@ const balasan = async (button) => {
   let id = button.getAttribute('data-uuid').toString();
   let token = localStorage.getItem('token') ?? '';
 
-  // if (token.length == 0) {
-  //   alert('Terdapat kesalahan, token kosong !');
-  //   window.location.reload();
-  //   return;
-  // }
-
   const REQ = {
     method: 'GET',
     headers: {
@@ -154,7 +148,7 @@ const balasan = async (button) => {
               </div>`;
       }
 
-      if (res.error.length != 0) {
+      if (res?.error?.length != 0) {
         if (res.error[0] == 'Expired token') {
           alert('Terdapat kesalahan, token expired !');
           window.location.reload();
@@ -178,23 +172,17 @@ const kirimBalasan = async () => {
   let id = document.getElementById('idbalasan').value;
   let guestId = document.getElementById('guestId').value;
 
-  // if (token.length == 0) {
-  //   alert('Terdapat kesalahan, token kosong !');
-  //   window.location.reload();
-  //   return;
-  // }
-
-  if (nama.length == 0) {
+  if (nama?.length == 0) {
     alert('nama tidak boleh kosong');
     return;
   }
 
-  if (nama.length >= 35) {
+  if (nama?.length >= 35) {
     alert('panjangan nama maksimal 35');
     return;
   }
 
-  if (komentar.length == 0) {
+  if (komentar?.length == 0) {
     alert('pesan tidak boleh kosong');
     return;
   }
@@ -223,7 +211,7 @@ const kirimBalasan = async () => {
         isSuccess = true;
       }
 
-      if (res.error.length != 0) {
+      if (res.error?.length != 0) {
         if (res.error[0] == 'Expired token') {
           alert('Terdapat kesalahan, token expired !');
           window.location.reload();
@@ -309,12 +297,12 @@ const ucapan = () => {
         UCAPAN.innerHTML = null;
         res.data.forEach((data) => UCAPAN.appendChild(renderCard(data)));
 
-        if (res.data.length == 0) {
+        if (res.data?.length == 0) {
           UCAPAN.innerHTML = `<div class="h6 text-center">Tidak ada data</div>`;
         }
       }
 
-      if (res.error.length != 0) {
+      if (res.error?.length != 0) {
         if (res.error[0] == 'Expired token') {
           alert('Terdapat kesalahan, token expired !');
           window.location.reload();
@@ -327,44 +315,6 @@ const ucapan = () => {
     .catch((err) => alert(err));
 };
 
-const login = async () => {
-  document.getElementById('daftarucapan').innerHTML = `<div class="text-center"><span class="spinner-border spinner-border-sm me-1"></span>Loading...</div>`;
-  let body = document.querySelector('body');
-
-  const REQ = {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      email: body.getAttribute('data-email').toString(),
-      password: body.getAttribute('data-password').toString()
-    })
-  };
-
-  await fetch(body.getAttribute('data-url') + '/api/login', REQ)
-    .then((res) => res.json())
-    .then((res) => {
-      if (res.code == 200) {
-        localStorage.removeItem('token');
-        localStorage.setItem('token', res.data.token);
-        ucapan();
-      }
-
-      if (res.error.length != 0) {
-        alert('Terdapat kesalahan, ' + res.error[0]);
-        window.location.reload();
-        return;
-      }
-    })
-    .catch(() => {
-      // alert('Terdapat kesalahan, otomatis reload halaman');
-      // window.location.reload();
-      return;
-    });
-};
-
 const kirim = async () => {
   let nama = document.getElementById('formnama').value;
   let hadir = document.getElementById('hadiran').value;
@@ -372,18 +322,12 @@ const kirim = async () => {
   let token = localStorage.getItem('token') ?? '';
   let guestId = document.getElementById('guestId').value;
 
-  // if (token.length == 0) {
-  //   alert('Terdapat kesalahan, token kosong !');
-  //   window.location.reload();
-  //   return;
-  // }
-
-  if (nama.length == 0) {
+  if (nama?.length == 0) {
     alert('nama tidak boleh kosong');
     return;
   }
 
-  if (nama.length >= 35) {
+  if (nama?.length >= 35) {
     alert('panjangan nama maksimal 35');
     return;
   }
@@ -393,7 +337,7 @@ const kirim = async () => {
     return;
   }
 
-  if (komentar.length == 0) {
+  if (komentar?.length == 0) {
     alert('pesan tidak boleh kosong');
     return;
   }
@@ -425,14 +369,14 @@ const kirim = async () => {
         ucapan();
       }
 
-      if (res.error.length != 0) {
+      if (res?.error?.length != 0) {
         if (res.error[0] == 'Expired token') {
           alert('Terdapat kesalahan, token expired !');
           window.location.reload();
           return;
         }
 
-        alert(res.error[0]);
+        alert(res?.error[0]);
       }
     })
     .catch((err) => alert(err));
