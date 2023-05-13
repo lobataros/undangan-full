@@ -177,37 +177,45 @@
                     </p>
 
                     <div class="overflow-hidden">
-                        <div class="py-2" data-aos="fade-left" data-aos-duration="1500">
-                            <h1 class="font-estetik" style="font-size: 2rem;">Akad</h1>
-                            <p class="mb-0">Pukul 08.00 WIB - 09.00</p>
-                        </div>
-                        <div class="pb-2" data-aos="fade-up" data-aos-duration="1500">
-                            <p class="mb-3 mx-1" style="font-size: 0.9rem;">
-                                Masjid At-Taqwa KPAD Gegerkalong
-                            </p>
-                            <a href="https://goo.gl/maps/vBD4Lf7xvBwp2ZL8A" target="_blank"
-                                class="btn btn-outline-dark btn-sm rounded-pill shadow-sm mb-2 px-3">
-                                <i class="fa-solid fa-map-location-dot me-2"></i>Lihat Google Maps
-                            </a>
-                            <p class="mb-0 mt-1 mx-1" style="font-size: 0.9rem;">
-                                Jl. Pak Gatot Raya H No.27, Gegerkalong, Kec. Sukasari, Kota Bandung, Jawa Barat 40153
-                            </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="py-2" data-aos="fade-left" data-aos-duration="1500">
+                                    <h1 class="font-estetik" style="font-size: 2rem;">Akad</h1>
+                                    <p class="mb-0">Pukul 08.00 WIB - 09.00</p>
+                                </div>
+                                <div class="pb-2" data-aos="fade-up" data-aos-duration="1500">
+                                    <h5 class="mb-3 mx-1" style="font-size: 0.9rem;">
+                                        Masjid At-Taqwa KPAD Gegerkalong
+                                    </h5>
+                                    <a href="https://goo.gl/maps/vBD4Lf7xvBwp2ZL8A" target="_blank"
+                                        class="btn btn-outline-dark btn-sm rounded-pill shadow-sm mb-2 px-3">
+                                        <i class="fa-solid fa-map-location-dot me-2"></i>Lihat Google Maps
+                                    </a>
+                                    <p class="mb-0 mt-1 mx-1" style="font-size: 0.9rem;">
+                                        Jl. Pak Gatot Raya H No.27, Gegerkalong, Kec. Sukasari, Kota Bandung, Jawa Barat 40153
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="py-2" data-aos="fade-right" data-aos-duration="1500">
+                                    <h1 class="font-estetik" style="font-size: 2rem;">Resepsi</h1>
+                                    <p class="mb-0">Pukul 10.00 WIB - 12.30</p>
+                                </div>
+                                <div class="pt-2" data-aos="fade-up" data-aos-duration="1500">
+                                    <h5 class="mb-3 mx-1" style="font-size: 0.9rem;">
+                                        STIT At-Taqwa KPAD Gegerkalong
+                                    </h5>
+                                    <a href="https://goo.gl/maps/6VsMmQqnoZiEhkhv5" target="_blank"
+                                        class="btn btn-outline-dark btn-sm rounded-pill shadow-sm mb-2 px-3">
+                                        <i class="fa-solid fa-map-location-dot me-2"></i>Lihat Google Maps
+                                    </a>
+                                    <p class="mb-0 mt-1 mx-1" style="font-size: 0.9rem;">
+                                        KPAD, Jl. Intendans No.77S, Gegerkalong, Kec. Sukasari, Kota Bandung, Jawa Barat 40153
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="py-2" data-aos="fade-right" data-aos-duration="1500">
-                            <h1 class="font-estetik" style="font-size: 2rem;">Syukuran</h1>
-                            <p>Pukul 10.00 WIB - 12.30</p>
-                        </div>
-                        <div class="py-2" data-aos="fade-up" data-aos-duration="1500">
-                            <a href="https://goo.gl/maps/gVwMDMySzLpHU48q6" target="_blank"
-                                class="btn btn-outline-dark btn-sm rounded-pill shadow-sm mb-2 px-3">
-                                <i class="fa-solid fa-map-location-dot me-2"></i>Lihat Google Maps
-                            </a>
-                            <p class="mb-0 mt-1 mx-1" style="font-size: 0.9rem;">
-                                Jl. Gegerkalong Girang No.2, RT.04/RW.01, Gegerkalong, Kec. Sukasari, Kota Bandung, Jawa Barat 40153<br>
-                                (Patokan Depot Akita)
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>
